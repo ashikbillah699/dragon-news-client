@@ -21,26 +21,26 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="/">Dragon News</Navbar.Brand>
+                <Navbar.Brand><Link to='/'>Dragon News</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link>Features</Nav.Link>
+                        <Nav.Link >Pricing</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
+                            <NavDropdown.Item>Action</NavDropdown.Item>
+                            <NavDropdown.Item >
                                 Another action
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Item >Something</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item >
                                 Separated link
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">
+                        <>
                             {
                                 user?.uid ?
                                     <>
@@ -55,14 +55,14 @@ const Header = () => {
                                     </>
 
                             }
-                        </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        </>
+                        <Link to="/profile">
                             {user?.photoURL ?
                                 <Image roundedCircle style={{ height: '30px' }} src={user?.photoURL}></Image>
                                 :
                                 <FaUserAlt></FaUserAlt>
                             }
-                        </Nav.Link>
+                        </Link>
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftNav></LeftNav>
